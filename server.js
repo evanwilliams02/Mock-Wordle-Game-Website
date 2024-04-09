@@ -22,10 +22,10 @@ const cm = require("./customsessions");
 const { monitorEventLoopDelay } = require("perf_hooks");
 
 //Global Mongoose connection
-//const connection_string = "mongodb+srv://wordle-project:PdgWW3Dk63S6QgTB@cluster0.7e18m6v.mongodb.net/test";
+//const connection_string = "";
 
 //Local Mongoose connection
-const connection_string = "mongodb://127.0.0.1/wordle";
+const connection_string = "";
 
 const app = express();
 const httpServer = http.createServer(app);
