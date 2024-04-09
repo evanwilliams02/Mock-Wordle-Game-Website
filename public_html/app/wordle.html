@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- AUTHOR: Param - Jiaxi - Evan
+     Description: This html file organizes the 
+                  contents of the website Wordle.
+                  specifically the game page with
+                  where you make word guess and can
+                  view the leaderboard -->
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Wordle</title>
+  <link rel="stylesheet" href="../style/wordle.css" />
+</head>
+
+<body>
+
+  <div class="wordle-title">
+
+    <h1>Wordle</h1>
+
+  </div>
+
+  <div id="wordle">
+
+    <div id="nav">
+
+      <ul class="unoList">
+
+        <li class="lisItem" onclick="changeMode(this.innerText)">
+          Leaderboard
+        </li>
+
+        <li id='standard' class="lisItem" onclick="changeMode(this.innerText)">
+          Standard Mode
+        </li>
+
+        <li id='challenging' class="lisItem" onclick="changeMode(this.innerText)">
+          Challenging Mode
+        </li>
+
+        <li class="lisItem" onclick="changeMode(this.innerText)">
+          Practice Mode
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div id="gameHistory">
+
+      <h3>Game History</h3>
+
+      <table id="gamesHists">
+
+        <tr class="gameHistsDt">
+          <th class="gameHistsDt">Mode</th>
+          <th class="gameHistsDt">Word</th>
+          <th class="gameHistsDt">Result</th>
+        </tr>
+
+        <tr class="gameHistsDt">
+          <td id="mode0" class="gameHistsDt">-</td>
+          <td id="word0" class="gameHistsDt">-</td>
+          <td id="result0" class="gameHistsDt">-</td>
+        </tr>
+
+        <tr class="gameHistsDt">
+          <td id="mode1" class="gameHistsDt">-</td>
+          <td id="word1" class="gameHistsDt">-</td>
+          <td id="result1" class="gameHistsDt">-</td>
+        </tr>
+
+        <tr class="gameHistsDt">
+          <td id="mode2" class="gameHistsDt">-</td>
+          <td id="word2" class="gameHistsDt">-</td>
+          <td id="result2" class="gameHistsDt">-</td>
+        </tr>
+
+        <tr class="gameHistsDt">
+          <td id="mode3" class="gameHistsDt">-</td>
+          <td id="word3" class="gameHistsDt">-</td>
+          <td id="result3" class="gameHistsDt">-</td>
+        </tr>
+
+        <tr class="gameHistsDt">
+          <td id="mode4" class="gameHistsDt">-</td>
+          <td id="word4" class="gameHistsDt">-</td>
+          <td id="result4" class="gameHistsDt">-</td>
+        </tr>
+
+        <tr class="gameHistsDt">
+          <td id="mode5" class="gameHistsDt">-</td>
+          <td id="word5" class="gameHistsDt">-</td>
+          <td id="result5" class="gameHistsDt">-</td>
+        </tr>
+
+      </table>
+      
+
+    </div>
+
+    <div id="Leaderboard" onclick="closeLeaderBoard()">
+
+      <h2>Leaderboards</h2>
+
+      <h3>Standard</h3>
+
+      <table id="standardTable">
+
+        <tr>
+          <th>Player Name</th>
+          <th>Score</th>
+          <th>Games Played</th>
+          <th>Games Won</th>
+        </tr>
+
+      </table>
+
+      <br>
+      <br>
+
+      <h3>Challenging</h3>
+
+      <table id="challengeTable">
+
+        <tr>
+          <th>Player Name</th>
+          <th>Score</th>
+          <th>Games Played</th>
+          <th>Games Won</th>
+        </tr>
+
+      </table>
+
+      <br>
+      <br>
+
+    </div>
+
+    <div id="mode">
+
+      <h2 id="modeText">Standard Mode</h2>
+
+    </div>
+
+    <div id="board">
+
+      <div class="row">
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+      </div>
+
+      <div class="row">
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+      </div>
+
+      <div class="row">
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+      </div>
+
+      <div class="row">
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+      </div>
+
+      <div class="row">
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+        <div class="tiles"></div>
+      </div>
+
+    </div>
+
+    <div id="keyboard">
+
+      <button id="Q" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        Q
+      </button>
+
+      <button id="W" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        W
+      </button>
+
+      <button id="E" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        E
+      </button>
+
+      <button id="R" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        R
+      </button>
+
+      <button id="T" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        T
+      </button>
+
+      <button id="Y" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        Y
+      </button>
+
+      <button id="U" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        U
+      </button>
+      <button id="I" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        I
+      </button>
+
+      <button id="O" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        O
+      </button>
+
+      <button id="P" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        P
+      </button>
+
+      <button id="A" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        A
+      </button>
+
+      <button id="S" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        S
+      </button>
+
+      <button id="D" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        D
+      </button>
+
+      <button id="F" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        F
+      </button>
+
+      <button id="G" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        G
+      </button>
+
+      <button id="H" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        H
+      </button>
+
+      <button id="J" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        J
+      </button>
+
+      <button id="K" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        K
+      </button>
+
+      <button id="L" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        L
+      </button>
+
+      <br />
+
+      <button id="Enter" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        Enter
+      </button>
+
+      <button id="Z" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        Z
+      </button>
+
+      <button id="X" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        X
+      </button>
+
+      <button id="C" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        C
+      </button>
+
+      <button id="V" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        V
+      </button>
+
+      <button id="B" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        B
+      </button>
+
+      <button id="N" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        N
+      </button>
+
+      <button id="M" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        M
+      </button>
+
+      <button id="←" class="letters" type="button" onclick="updateTiles(this.innerText)">
+        ←
+      </button>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <p id="footer-id">Created by Param - Jiaxi - Evan</p>
+  </footer>
+
+  <button id="switch" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+  <script src="../script.js"></script>
+
+  <button id="help" onclick="showPopup()">How to play?</button>
+
+  <div id="popup">
+
+    <button id="close" onclick="closePopup()">X</button>
+
+    <h2 id="rules">Rules of Wordle Game</h2>
+
+    <ol>
+      <li>Guess the five-letter word in six or fewer attempts.</li>
+      <li>Each letter of the word is represented by a colored square.</li>
+      <li>A green square means the letter is in the correct position.</li>
+      <li>A yellow square means the letter is in the word, but not in the correct position.</li>
+      <li>A gray square means the letter is not in the word.</li>
+    </ol>
+
+  </div>
+
+</body>
+
+</html>

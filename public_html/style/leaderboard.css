@@ -1,0 +1,23 @@
+/**
+ * @AUTHOR: Param - Jiaxi - Evan
+ * @FILE: .css
+ * @Instructor: Ben Dicken
+ * @ASSIGNMENT: Final Project - Wordle
+ * @COURSE: CSc 337; Spring 2023
+ * @Purpose: Style for leaderboard
+ */
+
+body {
+  background-color: beige;
+}
+
+.wordle-header {
+  color: darkgoldenrod;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  border: 3px solid green;
+}
+
+#footer-id {
+  color: black;
+}

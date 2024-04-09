@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- AUTHOR: Param - Jiaxi - Evan
+    Description: This html file organizes the 
+                contents of the website Wordle.
+                specifically the login page with
+                where you can login or create an
+                account  -->
+
+<head>
+
+    <meta charset="UTF-8" />
+    <title>Wordle</title>
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
+    <script src="jquery.js"></script>
+    <script src="login.js"></script>
+    <script src="../script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+</head>
+
+<body id="body">
+
+    <header>
+        <h1 class="wordle-header">Wordle</h1>
+    </header>
+
+    <div id="login">
+
+        <h1>Login</h1>
+
+        <label class="acc-style" for="username">Username</label>
+        <br>
+
+        <input type="text" id="username">
+        <br>
+        <br>
+
+        <label class="acc-style" for="password">Password</label>
+        <br>
+
+        <input type="password" id="password">
+        <br>
+        <br>
+
+        <button class="index-btn-style animated-btn" type="button" onclick="login()">Login</button>
+
+        <div id="throw-error"></div>
+
+        <h1>Create Account</h1>
+
+        <label class="acc-style" for="username">Username</label>
+        <br>
+
+        <input type="text" id="create-username">
+        <br>
+        <br>
+
+        <label class="acc-style" for="password">Password</label>
+        <br>
+
+        <input type="password" id="create-password">
+        <br>
+        <br>
+
+        <button class="index-btn-style animated-btn" type="button" onclick="createAccount()">Create</button>
+
+    </div>
+
+    <footer>
+        <p id="footer-id">Created by Param - Jiaxi - Evan</p>
+    </footer>
+
+    <button id="switch" onclick="toggleDarkMode()"> Change Theme </button>
+</body>
+
+</html>
